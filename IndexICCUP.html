@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -8,15 +7,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@400;600;700&family=Barlow+Condensed:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg:      #0c0e0f;
-  --surface: #141718;
-  --card:    #1c1f21;
-  --border:  #2e3235;
-  --text:    #f0ede8;
-  --muted:   #8a8480;
-  --dim:     #4a4744;
+  --bg:      #0f0c08;
+  --surface: #1a1410;
+  --card:    #221a12;
+  --border:  #3a2e1e;
+  --text:    #f5ede0;
+  --muted:   #a0896a;
+  --dim:     #5a4830;
   --gold:    #f5c842;
   --green:   #7ecf7e;
+  --yellow:  #f5d87a;
   --c0:      #7ab8d4;
   --c1:      #f0c040;
 }
@@ -25,6 +25,7 @@
 body { background:var(--bg); color:var(--text); font-family:'Barlow Condensed',sans-serif; min-height:100vh; }
 .wrap { max-width:520px; margin:0 auto; padding:14px 14px 40px; }
 
+/* HEADER */
 .header { text-align:center; padding:26px 0 16px; border-radius:12px; overflow:hidden; position:relative; border-bottom:2px solid var(--border); margin-bottom:18px; }
 .header-bg { position:absolute; inset:0; background-size:cover; background-position:center 40%; filter:brightness(0.32) saturate(0.7); z-index:0; }
 .header > *:not(.header-bg) { position:relative; z-index:1; }
@@ -35,14 +36,15 @@ body { background:var(--bg); color:var(--text); font-family:'Barlow Condensed',s
 .header-date { display:inline-block; margin-top:10px; background:rgba(0,0,0,0.55); border:1px solid rgba(240,192,64,0.4); border-radius:4px; padding:3px 16px; font-size:0.72rem; letter-spacing:3px; color:#f0c040; font-weight:600; }
 .upload-hint { display:block; margin-top:8px; cursor:pointer; font-size:0.6rem; letter-spacing:3px; color:rgba(255,255,255,0.28); }
 
+/* SECTION LABEL */
 .section-label { font-family:'Teko',sans-serif; font-size:0.9rem; font-weight:600; letter-spacing:5px; color:var(--muted); margin-bottom:10px; display:flex; align-items:center; gap:10px; }
 .section-label::before,.section-label::after { content:''; flex:1; height:1px; background:var(--border); }
-.live-dot { width:7px; height:7px; border-radius:50%; background:#e04060; animation:blink 1.1s infinite; display:inline-block; margin-right:5px; }
+.live-dot { width:7px; height:7px; border-radius:50%; background:#c0431a; animation:blink 1.1s infinite; display:inline-block; margin-right:5px; }
 @keyframes blink { 0%,100%{opacity:1}50%{opacity:.2} }
 
+/* GLOBAL BANNER */
 .global-banner { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:18px; }
 .global-card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:12px 14px; text-align:center; }
-.global-label { font-size:0.6rem; letter-spacing:4px; color:var(--muted); margin-bottom:4px; }
 .global-name { font-family:'Teko',sans-serif; font-size:1.1rem; font-weight:600; letter-spacing:2px; }
 .global-pts { font-family:'Teko',sans-serif; font-size:2.4rem; font-weight:700; line-height:1; }
 .global-sub { font-size:0.6rem; color:var(--dim); letter-spacing:2px; margin-top:2px; }
@@ -52,11 +54,12 @@ body { background:var(--bg); color:var(--text); font-family:'Barlow Condensed',s
 .catch-tbl { width:100%; border-collapse:collapse; }
 .catch-tbl th { font-size:0.6rem; letter-spacing:2px; font-weight:700; padding:7px 10px; background:var(--surface); border-bottom:1px solid var(--border); text-align:center; color:var(--dim); }
 .catch-tbl th:first-child { text-align:left; }
-.catch-tbl td { padding:9px 10px; border-bottom:1px solid rgba(255,255,255,0.05); font-family:'Teko',sans-serif; font-size:1.2rem; font-weight:600; text-align:center; background:var(--card); color:var(--text); }
+.catch-tbl td { padding:9px 10px; border-bottom:1px solid rgba(255,255,255,0.05); font-family:'Teko',sans-serif; font-size:1.2rem; font-weight:600; text-align:center; color:var(--text); }
 .catch-tbl td:first-child { font-size:0.82rem; font-family:'Barlow Condensed',sans-serif; font-weight:700; letter-spacing:1px; text-align:left; color:var(--text); }
-.catch-tbl tr:last-child td { border-bottom:none; background:var(--surface); font-size:1rem; color:var(--muted); }
+.catch-tbl tr:last-child td { border-bottom:none; color:var(--muted); font-size:1rem; }
 .catch-tbl tr:last-child td:first-child { font-family:'Teko',sans-serif; font-size:0.75rem; letter-spacing:2px; }
 
+/* DAY NAV */
 .day-nav { margin-bottom:16px; }
 .day-nav-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; }
 .day-label { font-family:'Teko',sans-serif; font-size:1.4rem; font-weight:700; letter-spacing:3px; color:var(--text); }
@@ -74,11 +77,12 @@ body { background:var(--bg); color:var(--text); font-family:'Barlow Condensed',s
 .nav-btn { width:36px; height:36px; border-radius:8px; border:1px solid var(--border); background:rgba(255,255,255,0.04); color:var(--muted); cursor:pointer; font-size:1.1rem; display:flex; align-items:center; justify-content:center; }
 .nav-btn:active { background:rgba(255,255,255,0.1); }
 
+/* STANDINGS */
 .standings { background:var(--surface); border:1px solid var(--border); border-radius:10px; overflow:hidden; margin-bottom:18px; }
-.standings-head { display:grid; grid-template-columns:36px 1fr 70px 44px; padding:6px 12px; background:rgba(255,255,255,0.03); border-bottom:1px solid var(--border); font-size:0.62rem; letter-spacing:3px; color:var(--dim); font-weight:700; }
+.standings-head { display:grid; grid-template-columns:36px 1fr 70px 44px; padding:6px 12px; background:rgba(255,255,255,0.03); border-bottom:1px solid var(--border); font-size:0.62rem; letter-spacing:2px; color:var(--dim); font-weight:700; }
 .standings-row { display:grid; grid-template-columns:36px 1fr 70px 44px; align-items:center; padding:9px 12px; border-bottom:1px solid var(--border); }
 .standings-row:last-child { border-bottom:none; }
-.standings-row.top { background:rgba(240,192,64,0.04); }
+.standings-row.top { background:rgba(245,200,66,0.04); }
 .st-rank { font-family:'Teko',sans-serif; font-size:1.3rem; font-weight:700; color:var(--dim); }
 .st-rank.r1 { color:var(--gold); }
 .st-rank.r2 { color:#c0c0c0; }
@@ -89,9 +93,10 @@ body { background:var(--bg); color:var(--text); font-family:'Barlow Condensed',s
 .st-bar { height:100%; border-radius:3px; }
 .st-pts { font-family:'Teko',sans-serif; font-size:1.7rem; font-weight:700; text-align:right; line-height:1; }
 
+/* CARDS */
 .cards { display:flex; flex-direction:column; gap:12px; margin-bottom:18px; }
 .card { background:var(--card); border:1px solid var(--border); border-radius:12px; overflow:hidden; position:relative; }
-.card.leader { border-color:rgba(240,192,64,0.4); }
+.card.leader { border-color:rgba(245,200,66,.5); }
 .card-accent { height:4px; }
 .card-head { display:flex; align-items:flex-start; gap:12px; padding:13px 13px 0; }
 .avatar-upload { position:relative; cursor:pointer; flex-shrink:0; }
@@ -108,42 +113,47 @@ body { background:var(--bg); color:var(--text); font-family:'Barlow Condensed',s
 .leader-crown { position:absolute; top:9px; right:11px; font-size:1.1rem; animation:levitate 2s ease-in-out infinite; }
 @keyframes levitate { 0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-5px) rotate(5deg)} }
 
-.species-table { width:100%; border-collapse:collapse; margin-top:10px; }
-.species-table th { font-size:0.58rem; letter-spacing:2px; color:var(--dim); font-weight:700; padding:5px 6px; background:rgba(255,255,255,0.02); border-top:1px solid var(--border); border-bottom:1px solid var(--border); text-align:left; }
+/* SPECIES TABLE — même trame que CC Cup */
+.species-table { width:100%; border-collapse:collapse; margin-top:12px; }
+.species-table th { font-size:0.6rem; letter-spacing:2px; color:var(--dim); font-weight:700; padding:5px 6px; background:rgba(255,255,255,0.02); border-top:1px solid var(--border); border-bottom:1px solid var(--border); text-align:left; }
 .species-table th:last-child,.species-table th:nth-child(3) { text-align:center; }
-.species-table td { padding:8px 6px; border-bottom:1px solid rgba(255,255,255,0.04); vertical-align:middle; }
+.species-table td { padding:9px 6px; border-bottom:1px solid rgba(255,255,255,0.04); vertical-align:middle; }
 .species-table tr:last-child td { border-bottom:none; }
-.sp-name { font-size:0.83rem; font-weight:700; letter-spacing:1px; color:var(--text); display:flex; align-items:center; gap:6px; }
-.milestone-pill { background:rgba(240,192,64,.15); border:1px solid rgba(240,192,64,.35); color:var(--gold); border-radius:20px; padding:1px 6px; font-size:0.56rem; font-weight:700; letter-spacing:1px; }
-.size-wrap { display:flex; align-items:center; gap:3px; }
-.size-inp { width:44px; background:rgba(255,255,255,0.05); border:1px solid var(--border); border-radius:6px; color:var(--text); font-family:'Teko',sans-serif; font-size:1rem; font-weight:600; text-align:center; padding:3px 2px; outline:none; transition:border-color .2s; -moz-appearance:textfield; }
+.sp-name { font-size:0.85rem; font-weight:700; letter-spacing:1px; color:var(--text); display:flex; align-items:center; gap:7px; }
+.milestone-pill { background:rgba(245,200,66,.15); border:1px solid rgba(245,200,66,.35); color:var(--gold); border-radius:20px; padding:1px 7px; font-size:0.58rem; font-weight:700; letter-spacing:1px; }
+.size-wrap { display:flex; align-items:center; gap:4px; }
+.size-inp { width:46px; background:rgba(255,255,255,0.05); border:1px solid var(--border); border-radius:6px; color:var(--text); font-family:'Teko',sans-serif; font-size:1rem; font-weight:600; text-align:center; padding:4px 2px; outline:none; transition:border-color .2s; -moz-appearance:textfield; }
 .size-inp::-webkit-outer-spin-button,.size-inp::-webkit-inner-spin-button { -webkit-appearance:none; }
-.size-inp::placeholder { color:var(--dim); font-family:'Barlow Condensed',sans-serif; font-size:.68rem; font-weight:400; }
-.size-unit { font-size:.58rem; color:var(--dim); }
-.ctr { display:flex; align-items:center; gap:3px; justify-content:center; }
-.ctr-btn { width:25px; height:25px; border-radius:5px; border:none; cursor:pointer; font-size:1rem; font-weight:700; display:flex; align-items:center; justify-content:center; transition:all .12s; }
+.size-inp::placeholder { color:var(--dim); font-family:'Barlow Condensed',sans-serif; font-size:.7rem; font-weight:400; }
+.size-inp:focus { border-color:rgba(255,255,255,.3); }
+.size-unit { font-size:.6rem; color:var(--dim); }
+.crown-icon { font-size:.9rem; }
+.ctr { display:flex; align-items:center; gap:4px; justify-content:center; }
+.ctr-btn { width:26px; height:26px; border-radius:6px; border:none; cursor:pointer; font-size:1rem; font-weight:700; display:flex; align-items:center; justify-content:center; transition:all .12s; font-family:'Barlow Condensed',sans-serif; }
 .ctr-btn.minus { background:rgba(255,255,255,.06); color:var(--muted); }
 .ctr-btn.minus:active { background:rgba(255,30,30,.2); color:#ff5555; transform:scale(.88); }
 .ctr-btn.plus { background:rgba(255,255,255,.1); color:var(--text); }
 .ctr-btn.plus:active { background:rgba(255,255,255,.2); transform:scale(.88); }
-.ctr-val { font-family:'Teko',sans-serif; font-size:1.3rem; font-weight:600; min-width:20px; text-align:center; }
+.ctr-val { font-family:'Teko',sans-serif; font-size:1.4rem; font-weight:600; min-width:22px; text-align:center; color:var(--text); }
 .pts-cell { text-align:center; }
-.pts-pill { display:inline-block; font-family:'Teko',sans-serif; font-size:0.88rem; font-weight:700; padding:2px 6px; border-radius:4px; min-width:30px; letter-spacing:1px; }
-.pts-pill.on { background:rgba(126,207,126,.15); color:var(--green); border:1px solid rgba(126,207,126,.3); }
+.pts-pill { display:inline-block; font-family:'Teko',sans-serif; font-size:0.9rem; font-weight:700; padding:2px 7px; border-radius:4px; min-width:32px; letter-spacing:1px; }
+.pts-pill.on  { background:rgba(126,207,126,.15); color:var(--green); border:1px solid rgba(126,207,126,.3); }
 .pts-pill.off { background:transparent; color:var(--border); border:1px solid var(--border); }
 @keyframes popIn { 0%{transform:scale(1)}40%{transform:scale(1.18)}70%{transform:scale(.95)}100%{transform:scale(1)} }
 .pop { animation:popIn .35s ease; }
 
-.bonus-panel { background:var(--surface); border:1px solid rgba(240,192,64,.15); border-radius:10px; padding:13px; margin-bottom:18px; }
+/* BONUS */
+.bonus-panel { background:var(--surface); border:1px solid rgba(245,200,66,.15); border-radius:10px; padding:13px; margin-bottom:18px; }
 .bonus-title { font-family:'Teko',sans-serif; font-size:0.95rem; font-weight:600; letter-spacing:4px; color:var(--gold); margin-bottom:10px; }
 .bonus-row { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
 .bonus-row:last-child { margin-bottom:0; }
 .bonus-name { font-family:'Teko',sans-serif; font-size:1rem; font-weight:600; letter-spacing:1px; min-width:84px; }
-.bonus-inp { flex:1; background:rgba(255,255,255,.04); border:1px solid rgba(240,192,64,.12); border-radius:6px; color:var(--text); font-family:'Barlow Condensed',sans-serif; font-size:0.8rem; padding:6px 9px; outline:none; }
+.bonus-inp { flex:1; background:rgba(255,255,255,.04); border:1px solid rgba(245,200,66,.12); border-radius:6px; color:var(--text); font-family:'Barlow Condensed',sans-serif; font-size:0.8rem; padding:6px 9px; outline:none; }
 .bonus-inp::placeholder { color:var(--dim); }
-.bonus-btn { width:34px; height:34px; border-radius:6px; border:1px solid rgba(240,192,64,.2); background:rgba(255,255,255,0.03); color:var(--dim); cursor:pointer; font-size:1rem; display:flex; align-items:center; justify-content:center; transition:all .2s; flex-shrink:0; }
-.bonus-btn.on { background:rgba(240,192,64,.18); border-color:var(--gold); color:var(--gold); }
+.bonus-btn { width:34px; height:34px; border-radius:6px; border:1px solid rgba(245,200,66,.2); background:rgba(255,255,255,0.03); color:var(--dim); cursor:pointer; font-size:1rem; display:flex; align-items:center; justify-content:center; transition:all .2s; flex-shrink:0; }
+.bonus-btn.on { background:rgba(245,200,66,.18); border-color:var(--gold); color:var(--gold); }
 
+/* RULES */
 .rules-panel { background:var(--surface); border:1px solid var(--border); border-radius:10px; overflow:hidden; margin-bottom:18px; }
 .rules-head { background:rgba(255,255,255,.03); border-bottom:1px solid var(--border); padding:9px 13px; font-family:'Teko',sans-serif; font-size:0.95rem; font-weight:600; letter-spacing:4px; color:var(--muted); }
 .rules-table { width:100%; border-collapse:collapse; }
@@ -155,18 +165,15 @@ body { background:var(--bg); color:var(--text); font-family:'Barlow Condensed',s
 .rule-note { display:block; font-size:0.66rem; color:var(--dim); margin-top:2px; font-family:'Barlow Condensed',sans-serif; font-weight:400; }
 .maille-badges { display:flex; gap:7px; padding:9px 13px; background:rgba(255,255,255,.02); border-top:1px solid var(--border); flex-wrap:wrap; }
 .maille-badge { display:inline-flex; align-items:center; gap:4px; background:rgba(255,255,255,.05); border:1px solid var(--border); border-radius:4px; padding:3px 9px; font-size:0.7rem; font-weight:700; letter-spacing:1px; color:var(--muted); }
-.maille-val { color:#f5d87a; font-family:'Teko',sans-serif; font-size:0.95rem; }
+.maille-val { color:var(--yellow); font-family:'Teko',sans-serif; font-size:0.95rem; }
 
-.reset-day-btn { display:block; width:100%; padding:12px; background:rgba(255,255,255,.03); border:1px solid var(--border); border-radius:8px; color:var(--muted); font-family:'Teko',sans-serif; font-size:0.95rem; font-weight:600; letter-spacing:4px; cursor:pointer; text-align:center; margin-bottom:12px; }
-.reset-btn { display:block; width:100%; padding:12px; background:rgba(224,64,96,.06); border:1px solid rgba(224,64,96,.2); border-radius:8px; color:#e04060; font-family:'Teko',sans-serif; font-size:0.95rem; font-weight:600; letter-spacing:4px; cursor:pointer; text-align:center; margin-bottom:20px; }
-
-footer { text-align:center; font-size:0.56rem; letter-spacing:4px; color:#1e2022; padding-bottom:10px; }
+footer { text-align:center; font-size:0.56rem; letter-spacing:4px; color:var(--dim); padding-bottom:10px; }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-<div class="header" id="mainHeader">
+<div class="header">
   <div class="header-bg" id="heroBg"></div>
   <div class="header-logo">IBERIA <span>CUP</span></div>
   <div class="header-sub">12 Jours · Espagne & Portugal</div>
@@ -215,24 +222,23 @@ footer { text-align:center; font-size:0.56rem; letter-spacing:4px; color:#1e2022
   <table class="rules-table">
     <thead><tr><th></th><th>RÈGLE</th><th style="text-align:right">POINTS</th></tr></thead>
     <tbody>
-      <tr><td>🐟</td><td><b>Plus gros BROCHET maillé</b> (≥60cm)<span class="rule-note">Par jour · En cas d'égalité, le premier pris l'emporte</span></td><td>+1 PT</td></tr>
       <tr><td>🎸</td><td><b>Plus gros BASS maillé</b> (≥30cm)<span class="rule-note">Par jour · En cas d'égalité, le premier pris l'emporte</span></td><td>+1 PT</td></tr>
+      <tr><td>🐟</td><td><b>Plus gros BROCHET maillé</b> (≥60cm)<span class="rule-note">Par jour · En cas d'égalité, le premier pris l'emporte</span></td><td>+1 PT</td></tr>
       <tr><td>📦</td><td><b>Atteindre 3 captures</b> d'une même espèce<span class="rule-note">Par jour · Une seule fois par espèce</span></td><td>+1 PT</td></tr>
-      <tr><td>📊</td><td><b>Plus grand total</b> toutes espèces<span class="rule-note">Par jour · Brochet ≥60cm · Bass ≥30cm · Sandre sans maille</span></td><td>+1 PT</td></tr>
+      <tr><td>📊</td><td><b>Plus grand total</b> toutes espèces<span class="rule-note">Par jour · Bass ≥30cm · Brochet ≥60cm · Sandre ≥50cm</span></td><td>+1 PT</td></tr>
       <tr><td>⚡</td><td><b>SANDRE capturé</b> (au moins 1 maillé ≥50cm)<span class="rule-note">1 seul point par jour quelle que soit la quantité</span></td><td>+1 PT</td></tr>
       <tr><td>📡</td><td><b>Poisson pris au Live Scope</b><span class="rule-note">Validé par l'autre angler · 1 seul bonus par jour</span></td><td>+1 PT</td></tr>
       <tr><td>⭐</td><td><b>Action Insolite</b> validée par l'autre angler</td><td>+1 PT</td></tr>
     </tbody>
   </table>
   <div class="maille-badges">
-    <div class="maille-badge">🐟 BROCHET <span class="maille-val">≥ 60 CM</span></div>
     <div class="maille-badge">🎸 BASS <span class="maille-val">≥ 30 CM</span></div>
+    <div class="maille-badge">🐟 BROCHET <span class="maille-val">≥ 60 CM</span></div>
     <div class="maille-badge">⚡ SANDRE <span class="maille-val">≥ 50 CM</span></div>
   </div>
 </div>
 
-
-<footer>IBERIA CUP · CAST & CONQUER · v2.0</footer>
+<footer>IBERIA CUP · CAST & CONQUER · v3.0</footer>
 </div>
 
 <script>
@@ -244,26 +250,24 @@ const ANGLERS = [
 const SPECIES = [
   { id:'bass',   label:'BASS',    emoji:'🎸', hasSize:true,  minSize:30 },
   { id:'pike',   label:'BROCHET', emoji:'🐟', hasSize:true,  minSize:60 },
-  { id:'zander', label:'SANDRE',  emoji:'⚡', hasSize:true, minSize:50  },
+  { id:'zander', label:'SANDRE',  emoji:'⚡', hasSize:true,  minSize:50 },
 ];
 
-const TOTAL_DAYS = 12;
-const ES_DAYS = 6;
+const TOTAL_DAYS = 12, ES_DAYS = 6;
 
 function freshAngler(id) {
-  return { id, counts:{pike:0,bass:0,zander:0}, sizes:{pike:'',bass:''}, milestone3:{pike:false,bass:false,zander:false}, sizets:{pike:0,bass:0}, bonus:false, bonusNote:'', livescope:false };
+  return { id, counts:{bass:0,pike:0,zander:0}, sizes:{bass:'',pike:'',zander:''}, milestone3:{bass:false,pike:false,zander:false}, sizets:{bass:0,pike:0,zander:0}, bonus:false, bonusNote:'', livescope:false };
 }
-function freshDay() { return { anglers: ANGLERS.map(a => freshAngler(a.id)) }; }
+function freshDay() { return { anglers: ANGLERS.map(a=>freshAngler(a.id)) }; }
 function fresh() { return { currentDay:0, days:Array.from({length:TOTAL_DAYS},()=>freshDay()), photos:[null,null] }; }
 
 let S = fresh();
-const save = () => { try { localStorage.setItem('iberiacup2', JSON.stringify(S)); } catch(e){} };
-const load = () => { try { const d=localStorage.getItem('iberiacup2'); if(d) S=JSON.parse(d); } catch(e){} };
-
+const save = () => { try { localStorage.setItem('iberiacup3', JSON.stringify(S)); } catch(e){} };
+const load = () => { try { const d=localStorage.getItem('iberiacup3'); if(d) S=JSON.parse(d); } catch(e){} };
 const getDay = () => S.days[S.currentDay];
 
 function biggestSize(day, spId) {
-  const min = SPECIES.find(s=>s.id===spId).minSize;
+  const min=SPECIES.find(s=>s.id===spId).minSize;
   let best={size:0,ts:Infinity,id:-1};
   day.anglers.forEach(a=>{
     const v=parseFloat(a.sizes[spId])||0;
@@ -276,24 +280,24 @@ function biggestSize(day, spId) {
 function totalFish(a) { return Object.values(a.counts).reduce((s,v)=>s+v,0); }
 
 function volumeLeader(day) {
-  let max=0,winner=-1;
+  let max=0, winner=-1;
   day.anglers.forEach(a=>{ const t=totalFish(a); if(t>max){max=t;winner=a.id;} });
   return max>0?winner:-1;
 }
 
 function computeDayScores(day) {
-  const pikeBest=biggestSize(day,'pike'), bassBest=biggestSize(day,'bass'), volWin=volumeLeader(day);
+  const bassBest=biggestSize(day,'bass'), pikeBest=biggestSize(day,'pike'), volWin=volumeLeader(day);
   return day.anglers.map(a=>{
     let pts=0; const bd=[];
-    if(a.milestone3.pike)  { pts+=1; bd.push('×3🐟'); }
-    if(a.milestone3.bass)  { pts+=1; bd.push('×3🎸'); }
-    if(a.milestone3.zander){ pts+=1; bd.push('×3⚡'); }
-    if(a.id===pikeBest)    { pts+=1; bd.push('👑🐟'); }
-    if(a.id===bassBest)    { pts+=1; bd.push('👑🎸'); }
-    if(a.id===volWin)      { pts+=1; bd.push('📊'); }
-    if(a.counts.zander>0)  { pts+=1; bd.push('⚡'); }
-    if(a.livescope)        { pts+=1; bd.push('📡'); }
-    if(a.bonus)            { pts+=1; bd.push('⭐'); }
+    SPECIES.forEach(sp=>{ if(a.milestone3[sp.id]){pts+=1;bd.push('×3'+sp.emoji);} });
+    if(a.id===bassBest){ pts+=1; bd.push('👑🎸'); }
+    if(a.id===pikeBest){ pts+=1; bd.push('👑🐟'); }
+    if(a.id===volWin)  { pts+=1; bd.push('📊'); }
+    // sandre : 1pt si au moins 1 maillé
+    const zv=parseFloat(a.sizes.zander)||0;
+    if(a.counts.zander>0&&zv>=50){ pts+=1; bd.push('⚡'); }
+    if(a.livescope){ pts+=1; bd.push('📡'); }
+    if(a.bonus)    { pts+=1; bd.push('⭐'); }
     return {id:a.id, pts, bd};
   });
 }
@@ -305,7 +309,7 @@ function computeGlobalScores() {
 }
 
 function computeGlobalCatches() {
-  const totals=ANGLERS.map(a=>({id:a.id,counts:{pike:0,bass:0,zander:0}}));
+  const totals=ANGLERS.map(a=>({id:a.id,counts:{bass:0,pike:0,zander:0}}));
   S.days.forEach(day=>{ day.anglers.forEach(a=>{ SPECIES.forEach(sp=>{ totals[a.id].counts[sp.id]+=a.counts[sp.id]; }); }); });
   return totals;
 }
@@ -314,7 +318,6 @@ function dayHasData(di) {
   return S.days[di].anglers.some(a=>Object.values(a.counts).some(v=>v>0)||a.bonus||a.livescope);
 }
 
-// ── ACTIONS ──
 function upCount(aid, spId, d) {
   const a=getDay().anglers[aid];
   a.counts[spId]=Math.max(0,a.counts[spId]+d);
@@ -326,18 +329,18 @@ function upCount(aid, spId, d) {
 
 function upSize(aid, spId, val) {
   const a=getDay().anglers[aid];
-  const prev=parseFloat(a.sizes[spId])||0;
-  const next=parseFloat(val)||0;
+  const prev=parseFloat(a.sizes[spId])||0, next=parseFloat(val)||0;
   a.sizes[spId]=val;
   if(next>prev) a.sizets[spId]=Date.now();
   save();
   const sp=SPECIES.find(s=>s.id===spId);
   const mailed=next>=sp.minSize&&next>0;
-  const bc=val?(mailed?'rgba(126,207,126,.45)':'rgba(224,64,96,.5)'):'rgba(255,255,255,.08)';
+  const bc=val?(mailed?'rgba(126,207,126,.45)':'rgba(192,67,26,.5)'):'rgba(255,255,255,.08)';
   const inp=document.getElementById('sz'+aid+spId);
   if(inp) inp.style.borderColor=bc;
-  const pb=biggestSize(getDay(),'pike'), bb=biggestSize(getDay(),'bass');
-  const isWin=aid===(spId==='pike'?pb:bb)&&mailed;
+  const bB=biggestSize(getDay(),'bass'), pB=biggestSize(getDay(),'pike'), zB=biggestSize(getDay(),'zander');
+  const winMap={bass:bB,pike:pB,zander:zB};
+  const isWin=aid===winMap[spId]&&mailed;
   const cr=document.getElementById('cr'+aid+spId);
   if(cr) cr.textContent=isWin?'👑':'cm';
   renderStandings(); renderGlobal(); renderCatchTable();
@@ -348,8 +351,7 @@ function toggleLivescope(aid) { getDay().anglers[aid].livescope=!getDay().angler
 function upBonusNote(aid,val) { getDay().anglers[aid].bonusNote=val; save(); }
 
 function uploadPhoto(aid) {
-  const inp=document.getElementById('photoInp'+aid);
-  const file=inp.files[0]; if(!file) return;
+  const inp=document.getElementById('photoInp'+aid), file=inp.files[0]; if(!file) return;
   const reader=new FileReader();
   reader.onload=function(ev){
     const canvas=document.createElement('canvas'), img=new Image();
@@ -364,10 +366,8 @@ function uploadPhoto(aid) {
   reader.readAsDataURL(file);
 }
 
-// ── RENDER ──
 function renderGlobal() {
-  const global=computeGlobalScores();
-  const sorted=[...global].sort((a,b)=>b.pts-a.pts);
+  const global=computeGlobalScores(), sorted=[...global].sort((a,b)=>b.pts-a.pts);
   document.getElementById('globalBanner').innerHTML=sorted.map((s,i)=>{
     const cfg=ANGLERS[s.id], photo=S.photos[s.id];
     const thumb=photo?`<img src="${photo}" style="width:32px;height:32px;border-radius:7px;object-fit:cover;border:2px solid ${cfg.hex}55;margin:0 auto 4px;display:block;"/>`:`<div style="font-size:1.4rem;margin-bottom:2px;">${cfg.emoji}</div>`;
@@ -393,20 +393,22 @@ function renderCatchTable() {
   }).join('');
   const pTotals=catches.map(c=>Object.values(c.counts).reduce((s,v)=>s+v,0));
   const grand=pTotals.reduce((s,v)=>s+v,0);
-  const totalRow=`<tr>
-    <td style="font-family:'Teko',sans-serif;font-size:0.75rem;letter-spacing:2px;color:var(--muted)">TOTAL</td>
-    ${pTotals.map((t,i)=>`<td style="color:${ANGLERS[i].hex}">${t||'—'}</td>`).join('')}
-    <td style="color:var(--muted)">${grand||'—'}</td>
-  </tr>`;
   document.getElementById('catchTable').innerHTML=`
     <div class="catch-wrap">
       <table class="catch-tbl">
         <thead><tr>
           <th>ESPÈCE</th>
           ${ANGLERS.map(a=>`<th style="color:${a.hex}">${a.name}</th>`).join('')}
-          <th style="color:var(--dim)">TOTAL</th>
+          <th>TOTAL</th>
         </tr></thead>
-        <tbody>${rows}${totalRow}</tbody>
+        <tbody>
+          ${rows}
+          <tr>
+            <td>TOTAL</td>
+            ${pTotals.map((t,i)=>`<td style="color:${ANGLERS[i].hex}">${t||'—'}</td>`).join('')}
+            <td>${grand||'—'}</td>
+          </tr>
+        </tbody>
       </table>
     </div>`;
 }
@@ -449,7 +451,8 @@ function render() {
 
   renderStandings(); renderGlobal(); renderCatchTable();
 
-  const pikeBest=biggestSize(day,'pike'), bassBest=biggestSize(day,'bass');
+  const bassBest=biggestSize(day,'bass'), pikeBest=biggestSize(day,'pike'), zanderBest=biggestSize(day,'zander');
+  const winMap={bass:bassBest,pike:pikeBest,zander:zanderBest};
 
   document.getElementById('cards').innerHTML=day.anglers.map(angler=>{
     const cfg=ANGLERS[angler.id], sc=scores[angler.id], photo=S.photos[angler.id];
@@ -460,19 +463,13 @@ function render() {
 
     const spRows=SPECIES.map(sp=>{
       const count=angler.counts[sp.id], ms=angler.milestone3[sp.id];
-      let sizeCell='';
-      if(sp.hasSize){
-        const sv=angler.sizes[sp.id], nv=parseFloat(sv)||0;
-        const mailed=nv>=sp.minSize&&nv>0;
-        const isWin=angler.id===(sp.id==='pike'?pikeBest:bassBest)&&mailed;
-        const bc=sv?(mailed?'rgba(126,207,126,.45)':'rgba(224,64,96,.5)'):'rgba(255,255,255,.08)';
-        sizeCell=`<div class="size-wrap"><input type="number" inputmode="decimal" class="size-inp" id="sz${angler.id}${sp.id}" placeholder="${sp.minSize}cm" value="${sv}" style="border-color:${bc}" oninput="upSize(${angler.id},'${sp.id}',this.value)"/><span id="cr${angler.id}${sp.id}" class="${isWin?'crown-icon':'size-unit'}">${isWin?'👑':'cm'}</span></div>`;
-      } else {
-        sizeCell=`<div style="width:48px"></div>`;
-      }
-      // pts display
+      const sv=angler.sizes[sp.id], nv=parseFloat(sv)||0;
+      const mailed=nv>=sp.minSize&&nv>0;
+      const isWin=angler.id===winMap[sp.id]&&mailed;
+      const bc=sv?(mailed?'rgba(126,207,126,.45)':'rgba(192,67,26,.5)'):'rgba(255,255,255,.08)';
+      const sizeCell=`<div class="size-wrap"><input type="number" inputmode="decimal" class="size-inp" id="sz${angler.id}${sp.id}" placeholder="${sp.minSize}cm" value="${sv}" style="border-color:${bc}" oninput="upSize(${angler.id},'${sp.id}',this.value)"/><span id="cr${angler.id}${sp.id}" class="${isWin?'crown-icon':'size-unit'}">${isWin?'👑':'cm'}</span></div>`;
       let dpts=0;
-      if(sp.id==='zander'&&count>0) dpts=1;
+      if(sp.id==='zander'){ const zv=parseFloat(angler.sizes.zander)||0; if(count>0&&zv>=50) dpts=1; }
       else if(ms) dpts=1;
       return `<tr>
         <td><div class="sp-name"><span>${sp.emoji}</span>${sp.label}${ms?'<span class="milestone-pill">×3 ✓</span>':''}</div></td>
@@ -514,19 +511,12 @@ function render() {
 }
 
 function goDay(i){ S.currentDay=i; save(); render(); }
-function prevDay(){ if(S.currentDay>0){ S.currentDay--; save(); render(); } }
-function nextDay(){ if(S.currentDay<TOTAL_DAYS-1){ S.currentDay++; save(); render(); } }
 
-// Init
 load(); render();
 
-// Boutons reset (après render pour que les éléments existent)
-document.getElementById('btnPrev').onclick = function(){ prevDay(); };
-document.getElementById('btnNext').onclick = function(){ nextDay(); };
+document.getElementById('btnPrev').onclick=function(){ if(S.currentDay>0){S.currentDay--;save();render();} };
+document.getElementById('btnNext').onclick=function(){ if(S.currentDay<TOTAL_DAYS-1){S.currentDay++;save();render();} };
 
-
-
-// Photo de fond
 document.getElementById('heroUpload').addEventListener('change',function(e){
   var file=e.target.files[0]; if(!file) return;
   var reader=new FileReader();
@@ -538,13 +528,13 @@ document.getElementById('heroUpload').addEventListener('change',function(e){
       canvas.getContext('2d').drawImage(img,0,0,canvas.width,canvas.height);
       var dataUrl=canvas.toDataURL('image/jpeg',0.72);
       document.getElementById('heroBg').style.backgroundImage='url('+dataUrl+')';
-      try{ localStorage.setItem('iberiacup2_hero',dataUrl); } catch(e){}
+      try{ localStorage.setItem('iberiacup3_hero',dataUrl); } catch(e){}
     };
     img.src=ev.target.result;
   };
   reader.readAsDataURL(file);
 });
-var savedHero=localStorage.getItem('iberiacup2_hero');
+var savedHero=localStorage.getItem('iberiacup3_hero');
 if(savedHero) document.getElementById('heroBg').style.backgroundImage='url('+savedHero+')';
 </script>
 </body>
